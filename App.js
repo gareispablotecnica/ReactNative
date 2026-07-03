@@ -1,40 +1,93 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View,Image } from 'react-native';
+import { StyleSheet, Text, View, Image, TouchableOpacity,ScrollView } from 'react-native';
 
 import Logo from './assets/Productos/a.jpg'
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text style={styles.Titulo}>Producto1</Text>
+    <ScrollView contentContainerStyle={styles.container}>
 
-      <Image
-        source={Logo}
-        style={styles.ImgProducto}
-      ></Image>
+      <View style={styles.tarjetas}>
+        <Text style={styles.Titulo}>Producto1</Text>
+
+        <Image
+          source={Logo}
+          style={styles.ImgProducto}
+        ></Image>
+
+        <TouchableOpacity
+          style={styles.Boton}
+          onPress={() => { alert('Prado Bañate') }}
+        >
+          <Text style={styles.subtitulo}>Agregar al Carrito</Text>
+        </TouchableOpacity>
+      </View>
+
+       <View style={styles.tarjetas}>
+        <Text style={styles.Titulo}>Producto1</Text>
+
+        <Image
+          source={Logo}
+          style={styles.ImgProducto}
+        ></Image>
+
+        <TouchableOpacity
+          style={styles.Boton}
+          onPress={() => { alert('Prado Bañate') }}
+        >
+          <Text style={styles.subtitulo}>Agregar al Carrito</Text>
+        </TouchableOpacity>
+      </View>
+
+       <View style={styles.tarjetas}>
+        <Text style={styles.Titulo}>Producto1</Text>
+
+        <Image
+          source={Logo}
+          style={styles.ImgProducto}
+        ></Image>
+
+        <TouchableOpacity
+          style={styles.Boton}
+          onPress={() => { alert('Prado Bañate') }}
+        >
+          <Text style={styles.subtitulo}>Agregar al Carrito</Text>
+        </TouchableOpacity>
+      </View>
 
       <StatusBar style="auto" />
-    </View>
+    </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
-    elevation:10,
+    paddingVertical:5,
   },
-  ImgProducto:{
-    width:250,
-    height:250,
-    resizeMode:'contain',
+  ImgProducto: {
+    width: 250,
+    height: 250,
+    resizeMode: 'contain',
   },
-  Titulo:{
-    textAlign:'center',
-    fontSize:30,
-    margin:10,
-    color:'#304080',
+  Titulo: {
+    textAlign: 'center',
+    fontSize: 30,
+    margin: 10,
+    color: '#304080',
+    fontWeight: 'bold',
+  },
+  Boton: {
+    padding: 15,
+    borderRadius: 10,
+    backgroundColor: '#384090',
+    width: 180,
+    marginTop: 10,
+  },
+  subtitulo: {
+    textAlign: 'center',
+    color: '#fff',
   },
 });
